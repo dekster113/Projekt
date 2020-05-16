@@ -2,13 +2,15 @@ package app;
 
 public class Book {
 // Pola
+
     private String Tytul;
     private String Autor;
     private int DataWydania;
     private int Strony;
     private String Wydawca;
     private String isbn;
-// Konstruktory
+
+    // Konstruktory
     public Book(String Tytul, String Autor, int DataWydania, int Strony, String Wydawca, String isbn) {
 
         this.Tytul=Tytul;
@@ -18,11 +20,12 @@ public class Book {
         this.Wydawca=Wydawca;
         this.isbn=isbn;
 }
-    Book (Book book)
+     Book(Book book)
     {
         this(book.Tytul, book.Autor, book.DataWydania, book.Strony, book.Wydawca, book.isbn);
     }
 // set i get
+
     public String getTytul() {
         return Tytul;
     }
@@ -73,7 +76,7 @@ public class Book {
 
 
 
-    void DrukowanieInformacji ()
+    public void DrukowanieInformacji ()
     {
         String info = Tytul+"; "+Autor+"; "+DataWydania+"; "+Strony+"; "+Wydawca+"; "+isbn;
         System.out.println(info);
