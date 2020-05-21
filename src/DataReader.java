@@ -1,5 +1,5 @@
 package utils;
-import app.Book;
+import data.Book;
 import java.util.Scanner;
 
 public class DataReader {
@@ -14,6 +14,11 @@ public class DataReader {
     public void close()
     {
         sc.close();
+    }
+    public int getInt(){
+        int number = sc.nextInt();
+        sc.nextLine();
+        return number;
     }
 
     public Book readAndCreateBook() {
