@@ -1,21 +1,21 @@
 package utils;
 import data.Book;
 import java.util.Scanner;
+import data.Magazine;
 
 public class DataReader {
 
     private Scanner sc;
 
-    public DataReader()
-    {
+    public DataReader() {
         sc = new Scanner(System.in);
     }
 
-    public void close()
-    {
+    public void close() {
         sc.close();
     }
-    public int getInt(){
+
+    public int getInt() {
         int number = sc.nextInt();
         sc.nextLine();
         return number;
@@ -23,22 +23,41 @@ public class DataReader {
 
     public Book readAndCreateBook() {
         System.out.println("\nTytuł: ");
-        String Tytul = sc.nextLine();
+        String title = sc.nextLine();
         System.out.println("Autor: ");
-        String Autor = sc.nextLine();
+        String author = sc.nextLine();
         System.out.println("Wydawnictwo: ");
-        String Wydawca = sc.nextLine();
+        String publisher = sc.nextLine();
         System.out.println("ISBN: ");
         String isbn = sc.nextLine();
-        System.out.println("DataWydania: ");
-        int DataWydania = sc.nextInt();
+        System.out.println("Rok wydania: ");
+        int year = sc.nextInt();
         sc.nextLine();
-        System.out.println("Ilosc stron: ");
-        int Strony = sc.nextInt();
+        System.out.println("Ilość stron: ");
+        int pages = sc.nextInt();
         sc.nextLine();
 
-        return new Book(Tytul, Autor, DataWydania, Strony, Wydawca, isbn);
+        return new Book(title,author,year,pages,publisher,isbn);
 
     }
 
+    public Magazine readAndCreateMagazine() {
+        System.out.println("\nTytuł: ");
+        String title = sc.nextLine();
+        System.out.println("Wydawnictwo: ");
+        String publisher = sc.nextLine();
+        System.out.println("Język: ");
+        String language = sc.nextLine();
+        System.out.println("Rok wydania: ");
+        int year = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Miesiąc: ");
+        int month = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Dzień: ");
+        int day = sc.nextInt();
+        sc.nextLine();
+
+        return new Magazine(title, publisher, language, year, month, day);
+    }
 }
